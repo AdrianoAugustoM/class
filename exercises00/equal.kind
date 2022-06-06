@@ -1,0 +1,21 @@
+type Bool {
+    true
+    false
+}
+
+//Equal
+//Returns true if both inputs are identical
+eql(a: Bool, b: Bool): Bool
+    case a {
+        true: case b {
+            true: Bool.true
+            false: Bool.false
+        }
+        false: case b {
+            true: Bool.false
+            false: Bool.true
+        }
+    }
+
+equal: Bool
+    eql(Bool.true, Bool.true)

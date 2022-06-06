@@ -1,0 +1,22 @@
+type Bool {
+    true
+    false
+}
+
+//Xor
+//Returns true if both inputs are different
+xor2(a: Bool, b:Bool): Bool
+    case a {
+        true: case b {
+            true: Bool.false
+            false: Bool.true
+        }
+        false: case b {
+            true: Bool.true
+            false: Bool.false
+        }
+    }
+
+xor: Bool
+    xor2(Bool.true, Bool.false)
+

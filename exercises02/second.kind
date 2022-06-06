@@ -1,0 +1,12 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Returns the second element of a pair
+snd(pair: PairBool): Bool
+    case pair {
+        new: pair.snd
+    }
+
+second: Bool
+    snd(PairBool.new(Bool.true, Bool.false))

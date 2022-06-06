@@ -1,0 +1,14 @@
+type MaybeBool {
+    none
+    some(value: Bool)
+}
+
+//Returns true if Maybe is none
+is_none(a: MaybeBool): Bool
+    case a {
+        none: Bool.true
+        some: Bool.false
+    }
+
+none: Bool
+    is_none(MaybeBool.some(Bool.true))

@@ -1,0 +1,28 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Returns true if both Pairs are equal 
+// eql(PairBool.new(false, false), PairBool.new(true, true)) -> false 
+// eql(PairBool.new(true, false), PairBool.new(true, false)) -> true
+eql(a: PairBool, b: PairBool): Bool
+    case a {
+        new: case b {
+        new:
+        let eqlfst = Bool.eql(a.fst, b.fst)
+        let eqlsnd = Bool.eql(a.snd, b.snd)
+            case eqlfst {
+                true: case eqlsnd {
+                    true: Bool.true
+                    false: Bool.false
+                }
+                false: case eqlsnd {
+                    true: Bool.false
+                    false: Bool.false                   
+                }
+                } 
+        }
+    }
+
+equal: Bool
+    eql((PairBool.new(Bool.false Bool.false)),(PairBool.new(Bool.true,Bool.false)))

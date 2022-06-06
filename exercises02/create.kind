@@ -1,0 +1,11 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Creates a PairBool from 2 Booleans
+create2(a: Bool, b: Bool): PairBool
+    PairBool.new(a, b)
+
+create: PairBool
+    create2(Bool.true, Bool.true)
+

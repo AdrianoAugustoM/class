@@ -1,0 +1,21 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Returns true if both elements of a PairBool are identical
+eql_elements(a: PairBool): Bool
+    case a {
+        new: case a.fst {
+            true: case a.snd {
+                true: Bool.true
+                false: Bool.false
+            }
+            false: case a.snd {
+                true: Bool.false
+                false: Bool.true
+            }
+        }
+    }
+
+equalelements: Bool
+    eql_elements(PairBool.new(Bool.false, Bool.false))

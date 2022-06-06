@@ -1,0 +1,18 @@
+type Bool {
+    true
+    false
+}
+
+//And
+//Returns true if both inputs are true
+and2(a: Bool, b: Bool): Bool
+    case a {
+        true: case b {
+            true: Bool.true
+            false: Bool.false
+        }
+        false: Bool.false
+    }
+
+and: Bool
+    and2(Bool.false, Bool.true)

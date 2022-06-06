@@ -1,0 +1,18 @@
+type MaybeBool {
+    none
+    some(value: Bool)
+}
+
+//Returns the value inside the maybebool
+//If there is no value contained, return v instead
+extract2(a: MaybeBool, v: Bool): Bool
+    case a {
+        none: v
+        some: case a.value {
+            true: Bool.true
+            false: Bool.false
+        }
+    }
+
+extract: Bool
+    extract2(MaybeBool.some(Bool.false), Bool.true)

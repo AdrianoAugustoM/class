@@ -1,0 +1,13 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Inverts the 2 elements of a PairBool
+swap2(pair: PairBool): PairBool 
+        case pair { 
+        new:
+        PairBool.new(pair.snd, pair.fst)
+    }
+
+swap: PairBool
+    swap2(PairBool.new(Bool.false, Bool.true))

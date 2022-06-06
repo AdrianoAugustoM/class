@@ -1,0 +1,13 @@
+type Nat {
+    zero
+    succ(pred: Nat)
+}
+
+is_zero(a: Nat): Bool
+    case a {
+        zero: Bool.true
+        succ: Bool.false
+    }
+
+iszero: Bool  
+    is_zero(0)

@@ -1,0 +1,21 @@
+type Bool {
+    true
+    false
+}
+
+//Xnor
+//Returns true if both inputs are identical
+xnor2(a: Bool, b: Bool): Bool
+    case a {
+        true: case b {
+            true: Bool.true
+            false: Bool.false
+        }
+        false: case b {
+            true: Bool.false
+            false: Bool.true
+        }
+    }
+
+xnor: Bool
+    xnor2(Bool.true, Bool.true)

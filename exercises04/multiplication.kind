@@ -1,0 +1,15 @@
+type Nat {
+    zero
+    succ(pred: Nat)
+}
+
+//Multiplication
+mul(a: Nat, b: Nat): Nat
+    case a {
+        zero: 0
+        succ: ?A    
+    }
+
+
+multiplication: Nat
+    mul(3,4)

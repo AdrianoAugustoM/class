@@ -1,0 +1,18 @@
+type MaybeBool {
+    none
+    some(value: Bool)
+}
+
+//Returns the first input that is a MaybeBool.some
+//Returns MaybeBool.none if both are MaybeBool.none
+or2(a: MaybeBool, b: MaybeBool): MaybeBool
+    case a {
+        none: case b {
+            none: MaybeBool.none
+            some: b
+        }
+        some: a
+    }
+
+or: MaybeBool
+    or2(MaybeBool.some(Bool.true), MaybeBool.some(Bool.false))

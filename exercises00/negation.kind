@@ -1,0 +1,15 @@
+type Bool {
+    true
+    false
+}
+
+//Negation
+//Returns the opposite of a Bool
+neg(b: Bool): Bool
+    case b {
+        true: Bool.false
+        false: Bool.true
+    }
+
+negation: Bool
+    neg(Bool.false)

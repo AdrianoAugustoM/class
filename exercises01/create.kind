@@ -1,0 +1,15 @@
+type MaybeBool {
+    none
+    some(value: Bool)
+}
+
+//Create a MaybeBool from a Boolean
+//create(Bool.false) -> Maybebool(Bool.false)
+create2(a:Bool): MaybeBool
+    case a {
+        true: MaybeBool.some(Bool.true)
+        false: MaybeBool.some(Bool.false)
+    }
+
+create: MaybeBool
+    create2(Bool.false)

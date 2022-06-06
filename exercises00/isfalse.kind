@@ -1,0 +1,15 @@
+type Bool {
+    true
+    false
+}
+
+//Is false
+//Returns true if input is false
+is_false(a: Bool): Bool
+    case a {
+        true: Bool.false
+        false: Bool.true
+    }
+
+isfalse: Bool
+    is_false(Bool.false)

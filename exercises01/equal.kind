@@ -1,0 +1,36 @@
+type MaybeBool {
+    none
+    some(value: Bool)
+}
+
+//Returns true if both inputs are identical
+//eql(MaybeBool.none            , MaybeBool.none             ) -> true
+//eql(MaybeBool.some(Bool.false), MaybeBool.none             ) -> false
+//eql(MaybeBool.some(Bool.true) , MaybeBool.some(Bool.false))) -> false
+//eql(MaybeBool.some(Bool.false), MaybeBool.some(Bool.false))) -> true
+eql(a: MaybeBool, b: MaybeBool): Bool
+    case a {
+        none: case b {
+            none: Bool.true
+            some: Bool.false
+        }
+        some: case a.value {
+            true: case b {
+                none: Bool.false
+                some: case b.value {
+                true: Bool.true
+                false: Bool.false
+                }
+            }
+            false: case b {
+                none: Bool.false
+                some: case b.value {
+                    true: Bool.false
+                    false: Bool.true
+                }
+            }
+        }
+    }
+
+equal: Bool
+    eql(MaybeBool.some(Bool.false), MaybeBool.some(Bool.false))

@@ -1,0 +1,13 @@
+type Nat {
+    zero
+    succ(pred: Nat)
+}
+
+dbl(a: Nat): Nat
+    case a {
+        zero: Nat.zero
+        succ: Nat.succ(Nat.succ(dbl(a.pred)))
+    }
+
+double: Nat
+    dbl(2)

@@ -1,0 +1,20 @@
+type Bool {
+    true
+    false
+}
+
+//Nor
+//Returns true if both inputs are false
+nor(a: Bool, b: Bool): Bool
+    case a {
+        true: Bool.false
+        false: case b {
+            true: Bool.false
+            false: Bool.true
+        }
+    }
+
+nor: Bool
+    nor(Bool.false, Bool.false)
+
+// Unprintable

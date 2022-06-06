@@ -1,0 +1,21 @@
+type Nat {
+    zero
+    succ(pred: Nat)
+}
+
+//Addition
+add(a: Nat, b: Nat): Nat
+    case a {
+        zero: case b {
+            zero: Nat.zero
+            succ: b
+        }
+        succ: case b {
+            zero: a
+            succ: Nat.succ(Nat.succ(add(a.pred,b.pred)))
+        }
+    } 
+
+
+addition: Nat
+    add(3,1)

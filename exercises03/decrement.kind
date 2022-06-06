@@ -1,0 +1,14 @@
+type Nat {
+    zero
+    succ(pred: Nat)
+}
+
+dec(a: Nat): Nat
+    case a {
+        zero: Nat.zero
+        succ: a.pred
+
+    }
+
+decrement: Nat
+    dec(4)

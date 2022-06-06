@@ -1,0 +1,18 @@
+type Bool {
+    true
+    false
+}
+
+//Or
+//Returns true if any input is true
+or2(a: Bool, b: Bool): Bool
+    case a {
+        true: Bool.true
+        false: case b {
+            true: Bool.true
+            false: Bool.false
+        }
+    }
+
+or: Bool
+    or2(Bool.true, Bool.false)

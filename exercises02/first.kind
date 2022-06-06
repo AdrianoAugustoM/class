@@ -1,0 +1,12 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+//Returns the first element of a pair
+fst(pair: PairBool): Bool
+    case pair {
+        new: pair.fst
+    }
+
+first: Bool
+    fst(PairBool.new(Bool.true, Bool.false))

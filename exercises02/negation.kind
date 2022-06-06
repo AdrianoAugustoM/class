@@ -1,0 +1,18 @@
+type PairBool {
+    new(fst: Bool, snd: Bool)
+}
+
+// Inverts the values of a PairBool
+// neg(PairBool.new(false, false) -> PairBool.new(true, true)
+// neg(PairBool.new(false, true) -> PairBool.new(true, false)
+neg(pair: PairBool): PairBool
+    case pair {
+        new: 
+        let a = Bool.not(pair.fst)
+        let b = Bool.not(pair.snd)
+        PairBool.new(a, b)
+        }
+
+
+negation: PairBool
+    neg(PairBool.new(Bool.true, Bool.true))
